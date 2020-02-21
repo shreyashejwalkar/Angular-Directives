@@ -21,12 +21,18 @@ import { Component, OnInit } from '@angular/core';
     <div *ngSwitchCase="'blue'"><h2 style="color:blue;">You Picked Blue color</h2></div>
     <div *ngSwitchDefault><h2>Pick again</h2></div>
   </div>
+
+  <!--ngFor-->
+  <div *ngFor="let color of colors; index as i">
+    <h2>{{i}} - {{color}}</h2>
+  </div>
   `,
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit 
 {
   public color = "blue";
+  public colors=["red", "blue", "orange", "green"];
   displayname = true;
   constructor() { }
   ngOnInit(): void {}
